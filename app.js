@@ -8,7 +8,7 @@ const authRoutes = require('./routes/routes');
 const cookieParser = require('cookie-parser');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 
-const onport=process.env.PORT||3000
+const PORT=process.env.PORT
 
 app.use(express.json())
 app.use(cookieParser());
@@ -22,5 +22,5 @@ app.get('*', checkUser);
 app.use(router);
 
 // app.use('/',router)
-app.listen(process.env.PORT||3000)
-// app.listen(3000)
+
+app.listen(PORT)

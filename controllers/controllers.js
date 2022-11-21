@@ -8,14 +8,6 @@ const User = require('../models/User')
 const { requireAuth, checkUser } = require('../middleware/authMiddleware')
 
 exports.home = async (req, res) => {
-  // axios.get(`http://localhost:3000/api/users`)
-  //     .then(function (response) {
-  //         res.render('index', { blogs: response.data })
-  //     })
-  //     .catch(err => {
-  //         console.log(err);
-  //         res.send(err)
-  //     })
   try {
     const blogs = await schema.find({})
     res.render('index', { blogs })
